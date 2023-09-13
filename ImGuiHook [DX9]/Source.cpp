@@ -5,8 +5,8 @@
 #include <imgui_impl_win32.h>
 #include "Hook.h"
 
-bool ShowMenu = true;
-bool InitImGui = false;
+bool showMenu = true;
+bool initImGui = false;
 
 void InputHandler() {
     for (int i = 0; i < 5; i++) {
@@ -25,7 +25,7 @@ void InputHandler() {
 
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-    if (ShowMenu && ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam)) {
+    if (showMenu && ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam)) {
         return true;
     }
     return CallWindowProc(Process.TargetWndProc, hWnd, msg, wParam, lParam);
@@ -35,7 +35,7 @@ HRESULT APIENTRY hkEndScene(IDirect3DDevice9* pDevice) {
     if (pDevice == NULL)
         return oEndScene(pDevice);
 
-    if (!InitImGui) {     
+    if (!initImGui) {
         IMGUI_CHECKVERSION();
         ImGui::CreateContext();
 
@@ -48,7 +48,7 @@ HRESULT APIENTRY hkEndScene(IDirect3DDevice9* pDevice) {
             ImGui_ImplWin32_Init(Process.TargetHwnd);
             ImGui_ImplDX9_Init(pDevice);
             ImGui::GetIO().ImeWindowHandle = Process.TargetHwnd;
-            InitImGui = true;
+            initImGui = true;
         }   
     }
 
@@ -57,10 +57,10 @@ HRESULT APIENTRY hkEndScene(IDirect3DDevice9* pDevice) {
     ImGui::NewFrame();
 
     if (GetAsyncKeyState(VK_INSERT) & 1) 
-        ShowMenu = !ShowMenu;
+        showMenu = !showMenu;
 
-    ImGui::GetIO().MouseDrawCursor = ShowMenu;
-    if (ShowMenu == true) {
+    ImGui::GetIO().MouseDrawCursor = showMenu;
+    if (showMenu == true) {
         InputHandler();
         ImGui::ShowDemoWindow();
     }
@@ -145,7 +145,7 @@ HRESULT APIENTRY hkSetPixelShader(IDirect3DDevice9* pDevice, IDirect3DPixelShade
 }
 
 DWORD WINAPI InitHook(LPVOID lpParameter) {
-    if (ChecktDirectXVersion(DirectXVersion.D3D9) == false) {
+    if (checktDirectXVersion(DirectXVersion.D3D9) == false) {
         return FALSE;
     }
 

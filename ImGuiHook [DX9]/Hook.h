@@ -19,7 +19,7 @@ struct _DirectXVersion {
 	int D3D12 = 4;
 }DirectXVersion;
 
-bool ChecktDirectXVersion(int _DirectXVersion) {
+bool checktDirectXVersion(int _DirectXVersion) {
 	if (_DirectXVersion = DirectXVersion.D3D12) {
 		if (GetModuleHandle("d3d12.dll") != NULL) {
 			return true;
