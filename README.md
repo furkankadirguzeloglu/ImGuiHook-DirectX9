@@ -24,6 +24,6 @@ Supports x86 and x64
 * [DirectX Software Development Kit](https://www.microsoft.com/en-us/download/details.aspx?id=6812) - This DirectX SDK release contains updates to tools, utilities, samples, documentation, and runtime debug files for x64 and x86 platforms.
 * [Microsoft Detours](https://github.com/microsoft/Detours) - Microsoft Detours is an open source library for intercepting, monitoring and instrumenting binary functions on Microsoft Windows. It is developed by Microsoft and is most commonly used to intercept Win32 API calls within Windows applications.
 
-* ## License
+## License
 
 This project is licensed under the terms of the MIT license. See the [LICENSE](https://github.com/furkankadirguzeloglu/ImGuiHook-DirectX9/blob/master/LICENSE) file for details.
