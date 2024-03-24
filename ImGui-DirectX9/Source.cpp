@@ -9,6 +9,12 @@
 #pragma comment(lib, "d3d9.lib")
 #pragma comment(lib, "detours.lib")
 
+HANDLE hProcess = GetCurrentProcess();
+HANDLE hThread = NULL;
+HWND hWindow = NULL;
+bool isInitialized = false;
+bool isMenuVisible = true;
+
 HRESULT WINAPI hkEndScene(LPDIRECT3DDEVICE9 pDevice) {
     if (!isInitialized) {
         IMGUI_CHECKVERSION();

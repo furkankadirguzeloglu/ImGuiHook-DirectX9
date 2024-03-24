@@ -2,11 +2,6 @@
 #include <DirectX/d3d9.h>
 #pragma comment(lib, "d3d9.lib")
 
-HANDLE hProcess = GetCurrentProcess();
-HANDLE hThread = NULL;
-HWND hWindow = NULL;
-bool isInitialized = false;
-bool isMenuVisible = true;
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 void inputHandler();
 
