@@ -138,4 +138,4 @@ This project is for DirectX 9. You can visit my GitHub page for other DirectX ve
 * [Microsoft Detours](https://github.com/microsoft/Detours) - Microsoft Detours is an open source library for intercepting, monitoring and instrumenting binary functions on Microsoft Windows. It is developed by Microsoft and is most commonly used to intercept Win32 API calls within Windows applications.
 
 ## License
-This project is licensed under the terms of the MIT license. See the [LICENSE](https://raw.githubusercontent.com/furkankadirguzeloglu/ImGuiHook-DirectX11/main/LICENSE) file for details.
+This project is licensed under the terms of the MIT license. See the [LICENSE](https://raw.githubusercontent.com/furkankadirguzeloglu/ImGuiHook-DirectX9/main/LICENSE) file for details.
